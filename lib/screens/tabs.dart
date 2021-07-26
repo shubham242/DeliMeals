@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './favorites.dart';
 import './categories.dart';
+import '../widgets/drawer.dart';
 
 class Tabs extends StatefulWidget {
   @override
@@ -27,13 +28,14 @@ class _TabsState extends State<Tabs> {
       appBar: AppBar(
         title: Text(_pages[_selectedPageIndex]['title'].toString()),
       ),
+      drawer: MyDrawer(),
       body: (_pages[_selectedPageIndex]['page'] as Widget),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).primaryColor,
         unselectedIconTheme: IconThemeData(color: Colors.white),
-        selectedIconTheme: IconThemeData(color: Colors.amber),
+        selectedIconTheme: IconThemeData(color: Theme.of(context).accentColor),
         unselectedItemColor: Colors.white,
-        selectedItemColor: Colors.amber,
+        selectedItemColor: Theme.of(context).accentColor,
         currentIndex: _selectedPageIndex,
         onTap: _selectPage,
         items: <BottomNavigationBarItem>[

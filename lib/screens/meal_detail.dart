@@ -18,7 +18,7 @@ class MealDetail extends StatelessWidget {
   Widget buildContainer(BuildContext context, Widget child) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.cyan[100],
+        color: Theme.of(context).backgroundColor,
       ),
       margin: EdgeInsets.all(10),
       padding: EdgeInsets.all(10),
